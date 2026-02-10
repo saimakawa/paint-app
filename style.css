@@ -1,0 +1,162 @@
+:root {
+  --bg: #020617;
+  --panel: #111827;
+  --accent: #6366f1;
+  --border: #1e293b;
+  --text: #e5e7eb;
+  --card: #020617;
+}
+
+body.light {
+  --bg: #f4f6f8;
+  --panel: #ffffff;
+  --text: #111827;
+  --card: #f9fafb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family:
+    Segoe UI,
+    Arial,
+    sans-serif;
+}
+
+.sidebar {
+  width: 260px;
+  padding: 16px;
+  background: linear-gradient(180deg, var(--panel), var(--card));
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: 0.3s ease;
+}
+
+.sidebar.collapsed {
+  width: 60px;
+}
+
+.sidebar.collapsed h2,
+.sidebar.collapsed .group,
+.sidebar.collapsed .buttons {
+  display: none;
+}
+
+#toggleSidebar {
+  background: none;
+  color: var(--text);
+  font-size: 22px;
+  border: none;
+  cursor: pointer;
+}
+
+.sidebar h2 {
+  text-align: center;
+  color: var(--accent);
+}
+
+.group {
+  background: var(--card);
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+
+.group label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text);
+  opacity: 0.8;
+}
+
+.group input,
+.group select {
+  width: 100%;
+  padding: 6px;
+  background: transparent;
+  color: var(--text);
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  outline: none;
+}
+
+.group input:focus,
+.group select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.25);
+}
+
+.palette {
+  display: flex;
+  gap: 6px;
+  margin-top: 6px;
+  flex-wrap: wrap;
+}
+
+.palette div {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 1px solid #00000033;
+}
+
+.buttons {
+  margin-top: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+button {
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
+  background: #1f2937;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+body.light button {
+  background: #e5e7eb;
+  color: #111827;
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+button.primary {
+  grid-column: span 2;
+  background: linear-gradient(135deg, #6366f1, #4338ca);
+  color: white;
+}
+
+canvas {
+  flex: 1;
+  margin: 14px;
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+#brushPreview {
+  position: absolute;
+  pointer-events: none;
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
