@@ -72,7 +72,7 @@ canvas-drawing-app/
 ├── README.md
 
 🚀 How to Run Locally
-git clone https://github.com/saimakawa/mini-app.git
+git clone https://github.com/saimakawa/paint-app.git
 cd canvas-drawing-app
 open index.html
 
